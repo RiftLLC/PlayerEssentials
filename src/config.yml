@@ -1,0 +1,14 @@
+discord-uri: ''
+store-uri: ''
+terms-uri: ''
+motd:
+  line-1: '&aServer Network &c[1.15.2]'
+  line-2: '&eServer server server!'
+join-message:
+  - '&8-----=[ &aWelcome to Server &8]=-----'
+  - '&7Welcome, &a%player%&7!'
+  - '&7Online Players: %online%'
+  - ' '
+  - '&7Make sure you join our &aDiscord &7to keep up to date with the latest news! Use &a/discord&7'
+  - '&7Server updates and announcements are frequently posted to our discord.'
+  - '&8--------------------------------------------------'
