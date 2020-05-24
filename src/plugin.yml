@@ -3,6 +3,7 @@ name: HeroicEssentials
 author: Riley
 version: 1.0
 description: A light-weight essentials plugin
+depend: [Vault]
 commands:
   heroicessentials:
     description: Plugin information.
@@ -46,3 +47,18 @@ commands:
     description: Get a list of your homes
   nick:
     description: Nickname yourself
+  warp:
+    description: Warp to another location
+  setwarp:
+    description: Set a warp
+  delwarp:
+    description: Delete a warp
+  balance:
+    description: Get your balance
+    aliases: [bal]
+  pay:
+    description: Pay people money
+    aliases: [transfer]
+  banknotes:
+    description: Get bank notes
+    aliases: [checks]
