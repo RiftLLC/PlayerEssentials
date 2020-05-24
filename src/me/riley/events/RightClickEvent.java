@@ -16,11 +16,19 @@ public class RightClickEvent implements Listener {
 
     @EventHandler
     public void onClick(PlayerInteractEvent event) {
+<<<<<<< Updated upstream
         if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
             Player player = event.getPlayer();
             ItemStack item = player.getInventory().getItemInMainHand();
             if (item.getItemMeta().getDisplayName().equalsIgnoreCase(cc("&aBank Note"))) {
                 String amountString = ChatColor.RESET + item.getItemMeta().getLore().get(0).replace("$", "");
+=======
+        if (event.getAction() == Action.RIGHT_CLICK_AIR) {
+            Player player = event.getPlayer();
+            ItemStack item = player.getInventory().getItemInMainHand();
+            if (item.getItemMeta().getDisplayName().equalsIgnoreCase(cc("&aBank Note"))) {
+                String amountString = ChatColor.stripColor(item.getItemMeta().getLore().get(0));
+>>>>>>> Stashed changes
                 int amountPre = 0;
                 try {
                     amountPre = Integer.parseInt(amountString);
@@ -31,7 +39,11 @@ public class RightClickEvent implements Listener {
 
                 int itemAmount = item.getAmount();
                 int amount = amountPre * itemAmount;
+<<<<<<< Updated upstream
                 player.getInventory().remove(item);
+=======
+                event.getItem().setAmount(0);
+>>>>>>> Stashed changes
                 economyImplementer.depositPlayer(player, amount);
                 player.sendMessage(cc("&7Successfully cashed your bank notes for $&a" + amount));
             }
