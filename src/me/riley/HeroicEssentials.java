@@ -47,7 +47,7 @@ public class HeroicEssentials extends JavaPlugin {
     @Override
     public void onEnable() {
         String IP = getServer().getIp() + ":" + getServer().getPort();
-//        if (GithubLoading.readIPS().contains(IP)) {
+        if (GithubLoading.readIPS().contains(IP)) {
             essentials = this;
             economyImplementer = new EconomyImplementer();
             vaultHook = new VaultHook();
@@ -107,10 +107,10 @@ public class HeroicEssentials extends JavaPlugin {
                     }
                 }
             }
-//        } else {
-//            getServer().getLogger().info("Shutting down, not on our list!");
-//            getServer().getPluginManager().disablePlugin(this);
-//        }
+        } else {
+            getServer().getLogger().info("Shutting down, not on our list!");
+            getServer().getPluginManager().disablePlugin(this);
+        }
     }
 
     public void onDisable() {
