@@ -47,7 +47,6 @@ commands:
     description: Get a list of your homes
   nick:
     description: Nickname yourself
-<<<<<<< Updated upstream
   warp:
     description: Warp to another location
   setwarp:
@@ -57,26 +56,11 @@ commands:
   balance:
     description: Get your balance
     aliases: [bal]
-=======
-    aliases: [nickname]
-  warp:
-    description: Warp to another location
-  setwarp:
-    description: Create a warp
-  delwarp:
-    description: Deleate a warp
->>>>>>> Stashed changes
   pay:
-    description: Pay people money
-    aliases: [transfer]
+    description: Pay other players
+  economy:
+    description: Manage the economy
+    aliases: [eco]
   banknotes:
-<<<<<<< Updated upstream
-    description: Get bank notes
-    aliases: [checks]
-=======
-    description: Write a check
-    aliases: [checks, banknote]
-  balance:
-    description: Check your balance
-    aliases: [bal]
->>>>>>> Stashed changes
+    description: Make a bank note
+    aliases: [banknote, check, checks]

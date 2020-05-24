@@ -21,6 +21,7 @@ import me.riley.economy.EconomyImplementer;
 import me.riley.economy.VaultHook;
 import me.riley.economy.commands.BalanceCommand;
 import me.riley.economy.commands.BankNoteCommand;
+import me.riley.economy.commands.EconomyCommand;
 import me.riley.economy.commands.PayCommand;
 import me.riley.events.ConnectionEvents;
 import me.riley.events.RightClickEvent;
@@ -89,6 +90,7 @@ public class HeroicEssentials extends JavaPlugin {
             getCommand("pay").setExecutor(new PayCommand());
             getCommand("banknotes").setExecutor(new BankNoteCommand());
             getCommand("balance").setExecutor(new BalanceCommand());
+            getCommand("economy").setExecutor(new EconomyCommand());
 
             getServer().getPluginManager().registerEvents(new ServerListEvent(), this);
             getServer().getPluginManager().registerEvents(new ConnectionEvents(), this);
@@ -105,21 +107,10 @@ public class HeroicEssentials extends JavaPlugin {
                     }
                 }
             }
-<<<<<<< Updated upstream
-        } else {
-            getServer().getLogger().info("Shutting down, not on our list!");
-            getServer().getPluginManager().disablePlugin(this);
-        }
-=======
 //        } else {
 //            getServer().getLogger().info("Shutting down, not on our list!");
 //            getServer().getPluginManager().disablePlugin(this);
 //        }
-    }
-
-    public void onDisable() {
-        vaultHook.unhook();
->>>>>>> Stashed changes
     }
 
     public void onDisable() {
