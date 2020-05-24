@@ -1,7 +1,7 @@
 main: me.riley.HeroicEssentials
 name: HeroicEssentials
 author: Riley
-version: 1.0
+version: 1.5
 description: A light-weight essentials plugin
 depend: [Vault]
 commands:
