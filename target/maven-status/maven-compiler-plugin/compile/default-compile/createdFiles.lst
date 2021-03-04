@@ -1,9 +1,0 @@
-dev\riftmc\PlayerEssentials\listener\ConnectionListener.class
-dev\riftmc\PlayerEssentials\tools\ConfigFile.class
-dev\riftmc\PlayerEssentials\PlayerEssentials.class
-dev\riftmc\PlayerEssentials\tools\ServerSettings.class
-dev\riftmc\PlayerEssentials\tools\VersionChecker.class
-dev\riftmc\PlayerEssentials\tools\StringManager.class
-dev\riftmc\PlayerEssentials\api\EssentialsHook.class
-dev\riftmc\PlayerEssentials\api\VaultHook.class
-dev\riftmc\PlayerEssentials\listener\PingListener.class
