@@ -1,0 +1,6 @@
+dev\riftmc\PlayerEssentials\listener\ConnectionListener.class
+dev\riftmc\PlayerEssentials\PlayerEssentials.class
+dev\riftmc\PlayerEssentials\tools\ColoredMessage.class
+dev\riftmc\PlayerEssentials\tools\ServerSettings.class
+dev\riftmc\PlayerEssentials\tools\VersionChecker.class
+dev\riftmc\PlayerEssentials\api\EssentialsHook.class

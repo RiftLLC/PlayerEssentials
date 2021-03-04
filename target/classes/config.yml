@@ -1,0 +1,3 @@
+server-name: 'none'
+join-message: '&e%player% has joined the game!'
+leave-message: '&e%player% has left the game!'
