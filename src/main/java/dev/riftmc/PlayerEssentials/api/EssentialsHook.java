@@ -1,6 +1,7 @@
 package dev.riftmc.PlayerEssentials.api;
 
 import dev.riftmc.PlayerEssentials.PlayerEssentials;
+import dev.riftmc.PlayerEssentials.tools.ServerSettings;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -16,6 +17,10 @@ public class EssentialsHook {
     //TODO: expand api
     public PlayerEssentials getEssentials() {
         return essentials;
+    }
+
+    public String getServerName() {
+        return getEssentials().serverSettings.getName();
     }
 
 }

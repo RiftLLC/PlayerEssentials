@@ -1,0 +1,8 @@
+join-message: '&e%player% has joined the game!'
+quit-message: '&e%player% has left the game!'
+
+motd:
+  enabled: true
+  lines:
+    - '&ePoggers'
+    - '&eChamp'

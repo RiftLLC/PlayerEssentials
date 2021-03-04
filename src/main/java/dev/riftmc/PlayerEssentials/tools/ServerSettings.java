@@ -3,17 +3,23 @@ package dev.riftmc.PlayerEssentials.tools;
 import dev.riftmc.PlayerEssentials.PlayerEssentials;
 import org.bukkit.entity.Player;
 
+import static dev.riftmc.PlayerEssentials.tools.StringManager.combine;
+
 public class ServerSettings {
 
-    /* Setting Names*/
-    private final String name, joinMessage, quitMessage;
+    /* Setting Names */
+    private final String name, joinMessage, quitMessage, motd;
+    private final boolean motdEnabled;
 
     /* Setting the Settings */
     public ServerSettings(PlayerEssentials plugin) {
         /* Run on Startup */
         name = plugin.getConfig().getString("server-name");
-        joinMessage = plugin.getConfig().getString("join-message");
-        quitMessage = plugin.getConfig().getString("leave-message");
+        joinMessage = plugin.messagesFile.getConfig().getString("join-message");
+        quitMessage = plugin.messagesFile.getConfig().getString("leave-message");
+        motd = combine(plugin.messagesFile.getConfig().getStringList("motd.lines"), "\n");
+
+        motdEnabled = plugin.messagesFile.getConfig().getBoolean("motd.enabled");
     }
 
     /* Getting the Settings */
@@ -22,5 +28,8 @@ public class ServerSettings {
     }
     public String getJoinMessage() { return joinMessage; }
     public String getQuitMessage() { return quitMessage; }
+    public String getMotd() { return motd; }
+
+    public boolean isMotdEnabled() { return motdEnabled; }
 
 }

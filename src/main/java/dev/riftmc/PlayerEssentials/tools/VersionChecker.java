@@ -24,7 +24,7 @@ public class VersionChecker {
         InputStream in = null;
 
         try {
-            in = new URL("https://raw.githubusercontent.com/RileyCalhoun/HeroicEssentials/master/version.txt").openStream();
+            in = new URL("https://raw.githubusercontent.com/RileyCalhoun/PlayerEssentials/master/version.txt").openStream();
             latest = IOUtils.readLines(in).get(0);
         } catch (IOException e) {
             logger.info("[Update Checker] Unable to determine version!");
