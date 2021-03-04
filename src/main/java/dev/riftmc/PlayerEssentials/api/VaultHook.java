@@ -53,4 +53,7 @@ public class VaultHook {
         return chat != null;
     }
 
+    public void remind() {
+        if(!hasVault()) logger.info("[VaultHook] Make sure to install Vault before your next startup!");
+    }
 }
