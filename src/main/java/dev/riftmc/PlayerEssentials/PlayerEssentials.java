@@ -33,7 +33,6 @@ public class PlayerEssentials extends JavaPlugin {
     @Override
     public void onDisable() {
         versionChecker.remind();
-
         vaultHook.remind();
     }
 
