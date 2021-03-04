@@ -1,21 +1,19 @@
 package dev.riftmc.PlayerEssentials.api;
 
-import dev.riftmc.PlayerEssentials.PlayerEssentials;
-import dev.riftmc.PlayerEssentials.tools.ServerSettings;
-import org.bukkit.plugin.Plugin;
+import dev.riftmc.PlayerEssentials.Essentials;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /* The Essentials API */
 public class EssentialsHook {
 
-    private final PlayerEssentials essentials;
+    private final Essentials essentials;
 
     public EssentialsHook() {
-        this.essentials = JavaPlugin.getPlugin(PlayerEssentials.class);
+        this.essentials = JavaPlugin.getPlugin(Essentials.class);
     }
 
     //TODO: expand api
-    public PlayerEssentials getEssentials() {
+    public Essentials getEssentials() {
         return essentials;
     }
 

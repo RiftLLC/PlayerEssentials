@@ -1,6 +1,6 @@
 package dev.riftmc.PlayerEssentials.tools;
 
-import dev.riftmc.PlayerEssentials.PlayerEssentials;
+import dev.riftmc.PlayerEssentials.Essentials;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
@@ -14,7 +14,7 @@ public class VersionChecker {
     private static boolean upToDate = false;
     private static String latest = "", current = "";
 
-    public VersionChecker(PlayerEssentials plugin) {
+    public VersionChecker(Essentials plugin) {
         current = plugin.getDescription().getVersion();
         check();
     }

@@ -1,6 +1,6 @@
 package dev.riftmc.PlayerEssentials.tools;
 
-import dev.riftmc.PlayerEssentials.PlayerEssentials;
+import dev.riftmc.PlayerEssentials.Essentials;
 
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -14,7 +14,7 @@ public class ConfigFile {
     private final File file;
     private final FileConfiguration config;
 
-    public ConfigFile(PlayerEssentials plugin, String name) {
+    public ConfigFile(Essentials plugin, String name) {
         file = new File(plugin.getDataFolder(), name);
         if (!file.exists()) {
             file.getParentFile().mkdir();

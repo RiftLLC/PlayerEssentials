@@ -4,11 +4,12 @@ import dev.riftmc.PlayerEssentials.api.VaultHook;
 import dev.riftmc.PlayerEssentials.tools.ConfigFile;
 import dev.riftmc.PlayerEssentials.tools.ServerSettings;
 import dev.riftmc.PlayerEssentials.tools.VersionChecker;
+import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
 // Player Essentials by Quizaciously
-public class PlayerEssentials extends JavaPlugin {
+public class Essentials extends JavaPlugin {
 
     /* Player Essentials */
     public VersionChecker versionChecker;
@@ -20,6 +21,7 @@ public class PlayerEssentials extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        checkServerJar();
         messagesFile = new ConfigFile(this, "messages.yml");
         getConfig().options().copyDefaults(true);
         saveConfig();
@@ -34,6 +36,16 @@ public class PlayerEssentials extends JavaPlugin {
     public void onDisable() {
         versionChecker.remind();
         vaultHook.remind();
+    }
+
+    private void checkServerJar() {
+        try {
+            Class.forName("com.destroystokyo.paper.VersionHistoryManager$VersionData");
+            getLogger().info("Successfully found PaperSpigot!");
+        } catch (ClassNotFoundException e) {
+            getLogger().info("Could not find PaperSpigot, shutting down!");
+            getServer().getPluginManager().disablePlugin(this);
+        }
     }
 
 }

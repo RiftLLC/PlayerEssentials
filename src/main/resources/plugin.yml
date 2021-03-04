@@ -1,5 +1,5 @@
-main: dev.riiftmc.PlayerEssentials.PlayerEssentials
-name: PlayerEssentials
+main: dev.riiftmc.PlayerEssentials.Essentials
+name: Essentials
 author: Quizaciously
-version: 0.1
+version: 0.1-alpha
 description: A light-weight build of Essentials.

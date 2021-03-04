@@ -1,6 +1,6 @@
 package dev.riftmc.PlayerEssentials.api;
 
-import dev.riftmc.PlayerEssentials.PlayerEssentials;
+import dev.riftmc.PlayerEssentials.Essentials;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
@@ -11,13 +11,13 @@ import java.util.logging.Logger;
 public class VaultHook {
 
     private final Logger logger = Logger.getLogger("Minecraft");
-    private final PlayerEssentials plugin;
+    private final Essentials plugin;
 
     public Economy economy;
     public Permission permissions;
     public Chat chat;
 
-    public VaultHook(PlayerEssentials plugin) {
+    public VaultHook(Essentials plugin) {
         this.plugin = plugin;
 
         if(hasVault()) {

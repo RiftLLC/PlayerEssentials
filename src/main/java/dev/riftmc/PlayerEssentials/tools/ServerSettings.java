@@ -1,7 +1,6 @@
 package dev.riftmc.PlayerEssentials.tools;
 
-import dev.riftmc.PlayerEssentials.PlayerEssentials;
-import org.bukkit.entity.Player;
+import dev.riftmc.PlayerEssentials.Essentials;
 
 import static dev.riftmc.PlayerEssentials.tools.StringManager.combine;
 
@@ -12,7 +11,7 @@ public class ServerSettings {
     private final boolean motdEnabled;
 
     /* Setting the Settings */
-    public ServerSettings(PlayerEssentials plugin) {
+    public ServerSettings(Essentials plugin) {
         /* Run on Startup */
         name = plugin.getConfig().getString("server-name");
         joinMessage = plugin.messagesFile.getConfig().getString("join-message");

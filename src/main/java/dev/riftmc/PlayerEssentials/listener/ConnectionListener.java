@@ -1,6 +1,6 @@
 package dev.riftmc.PlayerEssentials.listener;
 
-import dev.riftmc.PlayerEssentials.PlayerEssentials;
+import dev.riftmc.PlayerEssentials.Essentials;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -11,8 +11,8 @@ import static dev.riftmc.PlayerEssentials.tools.StringManager.cc;
 
 public class ConnectionListener implements Listener {
 
-    private final PlayerEssentials plugin;
-    public ConnectionListener(PlayerEssentials plugin) {
+    private final Essentials plugin;
+    public ConnectionListener(Essentials plugin) {
         this.plugin = plugin;
     }
 
