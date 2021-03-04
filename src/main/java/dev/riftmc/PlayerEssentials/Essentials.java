@@ -43,7 +43,7 @@ public class Essentials extends JavaPlugin {
             Class.forName("com.destroystokyo.paper.VersionHistoryManager$VersionData");
             getLogger().info("Successfully found PaperSpigot!");
         } catch (ClassNotFoundException e) {
-            getLogger().info("Could not find PaperSpigot, shutting down!");
+            getLogger().info("Could not find PaperSpigot, disabling!");
             getServer().getPluginManager().disablePlugin(this);
         }
     }
