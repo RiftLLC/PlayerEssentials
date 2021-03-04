@@ -54,6 +54,8 @@ public class VaultHook {
     }
 
     public void remind() {
-        if(!hasVault()) logger.info("[VaultHook] Make sure to install Vault before your next startup!");
+        if(!hasVault()) {
+            logger.info("[VaultHook] Make sure to install Vault before your next startup!");
+        }
     }
 }
