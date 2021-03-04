@@ -18,7 +18,10 @@ public class EssentialsHook {
     public PlayerEssentials getEssentials() {
         return essentials;
     }
-    public VaultHook getVaultHook() { return getEssentials().vaultHook; }
+
+    public VaultHook getVaultHook() {
+        return getEssentials().vaultHook;
+    }
 
     public String getServerName() {
         return getEssentials().serverSettings.getName();
