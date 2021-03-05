@@ -1,23 +1,26 @@
 package dev.riftmc.PlayerEssentials;
 
+import dev.riftmc.PlayerEssentials.api.PlaceholderHook;
 import dev.riftmc.PlayerEssentials.api.VaultHook;
+import dev.riftmc.PlayerEssentials.listener.ListenerManager;
 import dev.riftmc.PlayerEssentials.tools.ConfigFile;
 import dev.riftmc.PlayerEssentials.tools.ServerSettings;
 import dev.riftmc.PlayerEssentials.tools.VersionChecker;
-import org.bukkit.Bukkit;
-import org.bukkit.Server;
 import org.bukkit.plugin.java.JavaPlugin;
 
 // Player Essentials by Quizaciously
 public class Essentials extends JavaPlugin {
 
-    /* Player Essentials */
+    /* Tools */
     public VersionChecker versionChecker;
+    public PlaceholderHook placeholderHook;
     public ServerSettings serverSettings;
     public ConfigFile messagesFile;
 
     /* Dependencies */
     public VaultHook vaultHook;
+    /* Commands & Events */
+    private ListenerManager listenerManager;
 
     @Override
     public void onEnable() {
@@ -27,6 +30,7 @@ public class Essentials extends JavaPlugin {
         saveConfig();
 
         vaultHook = new VaultHook(this);
+        placeholderHook = new PlaceholderHook(this);
 
         versionChecker = new VersionChecker(this);
         serverSettings = new ServerSettings(this);
@@ -36,6 +40,7 @@ public class Essentials extends JavaPlugin {
     public void onDisable() {
         versionChecker.remind();
         vaultHook.remind();
+        placeholderHook.remind();
     }
 
     private void checkServerJar() {

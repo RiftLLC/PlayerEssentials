@@ -36,7 +36,7 @@ public class VaultHook {
         logger.info("[VaultHook] Economy has been registered!");
         RegisteredServiceProvider<Economy> rsp = plugin.getServer().getServicesManager().getRegistration(Economy.class);
         economy = rsp != null ? rsp.getProvider() : null;
-        return true;
+        return economy != null;
     }
 
     private boolean setupPermissions() {

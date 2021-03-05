@@ -1,4 +1,4 @@
-package dev.riftmc.PlayerEssentials.listener;
+package dev.riftmc.PlayerEssentials.listener.impl;
 
 import com.destroystokyo.paper.event.server.PaperServerListPingEvent;
 import dev.riftmc.PlayerEssentials.Essentials;
@@ -16,7 +16,7 @@ public class PingListener implements Listener {
 
     @EventHandler
     public void onPing(PaperServerListPingEvent event) {
-        //TODO: placeholder api
+        //TODO: can't use PlaceholderAPI since I cannot get a Player object from this method
         if (plugin.serverSettings.isMotdEnabled()) {
             event.motd(cc(plugin.serverSettings.getMotd()));
         }

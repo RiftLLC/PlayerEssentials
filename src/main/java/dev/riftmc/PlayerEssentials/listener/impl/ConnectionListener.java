@@ -1,6 +1,7 @@
-package dev.riftmc.PlayerEssentials.listener;
+package dev.riftmc.PlayerEssentials.listener.impl;
 
 import dev.riftmc.PlayerEssentials.Essentials;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,16 +21,16 @@ public class ConnectionListener implements Listener {
     public void onConnect(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        //TODO: placeholder api
-        event.joinMessage(cc(plugin.serverSettings.getJoinMessage()));
+        String message = PlaceholderAPI.setPlaceholders(player, plugin.serverSettings.getJoinMessage());
+        event.joinMessage(cc(message));
     }
 
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
 
-        //TODO: placeholder api
-        event.quitMessage(cc(plugin.serverSettings.getQuitMessage()));
+        String message = PlaceholderAPI.setPlaceholders(player, plugin.serverSettings.getQuitMessage());
+        event.quitMessage(cc(message));
     }
 
 }
