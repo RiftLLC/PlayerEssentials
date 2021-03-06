@@ -38,8 +38,12 @@ public class ConnectionListener implements Listener {
     public void onQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
 
-        String message = PlaceholderAPI.setPlaceholders(player, plugin.serverSettings.getQuitMessage());
-        event.quitMessage(cc(message));
+        if (plugin.placeholderHook.hasPlaceholderAPI()) {
+            String message = PlaceholderAPI.setPlaceholders(player, plugin.serverSettings.getQuitMessage());
+            event.quitMessage(cc(message));
+        } else {
+            event.quitMessage(cc(plugin.serverSettings.getQuitMessage()));
+        }
     }
 
 }

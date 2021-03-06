@@ -8,17 +8,18 @@ public class ServerSettings {
 
     /* Setting Names */
     private final String name, joinMessage, quitMessage, motd;
-    private final boolean motdEnabled;
+    private final boolean motdEnabled, lobbyMode;
 
     /* Setting the Settings */
     public ServerSettings(Essentials plugin) {
         /* Run on Startup */
         name = plugin.getConfig().getString("server-name");
         joinMessage = plugin.messagesFile.getConfig().getString("join-message");
-        quitMessage = plugin.messagesFile.getConfig().getString("leave-message");
+        quitMessage = plugin.messagesFile.getConfig().getString("quit-message");
         motd = combine(plugin.messagesFile.getConfig().getStringList("motd.lines"), "\n");
 
         motdEnabled = plugin.messagesFile.getConfig().getBoolean("motd.enabled");
+        lobbyMode = plugin.getConfig().getBoolean("lobby-mode");
     }
 
     /* Getting the Settings */
@@ -40,6 +41,10 @@ public class ServerSettings {
 
     public boolean isMotdEnabled() {
         return motdEnabled;
+    }
+
+    public boolean isLobbyMode() {
+        return lobbyMode;
     }
 
 }
