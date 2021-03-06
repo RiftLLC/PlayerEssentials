@@ -1,7 +1,6 @@
 package dev.riftmc.PlayerEssentials.tools;
 
 import dev.riftmc.PlayerEssentials.Essentials;
-
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
