@@ -8,7 +8,7 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>PaperEssentials</artifactId>
+    <artifactId>EssentialsPaper</artifactId>
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
