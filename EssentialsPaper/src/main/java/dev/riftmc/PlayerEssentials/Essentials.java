@@ -31,6 +31,7 @@ public class Essentials extends JavaPlugin {
 
         vaultHook = new VaultHook(this);
         placeholderHook = new PlaceholderHook(this);
+        listenerManager = new ListenerManager(this);
 
         versionChecker = new VersionChecker(this);
         serverSettings = new ServerSettings(this);
@@ -39,8 +40,8 @@ public class Essentials extends JavaPlugin {
     @Override
     public void onDisable() {
         versionChecker.remind();
-        vaultHook.remind();
         placeholderHook.remind();
+        vaultHook.remind();
     }
 
     private void checkServerJar() {

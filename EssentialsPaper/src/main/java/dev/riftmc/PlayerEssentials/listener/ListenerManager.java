@@ -15,9 +15,9 @@ public class ListenerManager {
 
     public ListenerManager(Essentials plugin) {
         this.plugin = plugin;
-        logger.info("Registering events...");
+        logger.info("[Events] Registering events...");
         registerStartupListeners();
-        logger.info("Successfully registered " + amountOfListeners + " events!");
+        logger.info("[Events] Successfully registered " + amountOfListeners + " events!");
     }
 
     private void registerStartupListeners() {

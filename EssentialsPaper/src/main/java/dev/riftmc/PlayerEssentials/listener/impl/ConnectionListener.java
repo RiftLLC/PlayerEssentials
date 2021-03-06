@@ -1,6 +1,7 @@
 package dev.riftmc.PlayerEssentials.listener.impl;
 
 import dev.riftmc.PlayerEssentials.Essentials;
+import dev.riftmc.PlayerEssentials.tools.VersionChecker;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,8 +23,15 @@ public class ConnectionListener implements Listener {
     public void onConnect(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        String message = PlaceholderAPI.setPlaceholders(player, plugin.serverSettings.getJoinMessage());
-        event.joinMessage(cc(message));
+        if (plugin.placeholderHook.hasPlaceholderAPI()) {
+            String message = PlaceholderAPI.setPlaceholders(player, plugin.serverSettings.getJoinMessage());
+            event.joinMessage(cc(message));
+        } else {
+            event.joinMessage(cc(plugin.serverSettings.getJoinMessage()));
+        }
+
+        if (player.hasPermission("essentials.notify") && !(VersionChecker.upToDate))
+            player.sendMessage(cc("&eYou are currently on version &b" + VersionChecker.current + "&e, but the latest is &b" + VersionChecker.latest));
     }
 
     @EventHandler

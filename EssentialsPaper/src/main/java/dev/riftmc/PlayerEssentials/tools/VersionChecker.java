@@ -10,8 +10,8 @@ import java.util.logging.Logger;
 
 public class VersionChecker {
 
-    private static boolean upToDate = false;
-    private static String latest = "", current = "";
+    public static boolean upToDate = false;
+    public static String latest = "", current = "";
     private final Logger logger = Logger.getLogger("Minecraft");
 
     public VersionChecker(Essentials plugin) {
